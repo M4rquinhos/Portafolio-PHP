@@ -1,4 +1,11 @@
-<?php require_once("header.php") ?>
+<?php require_once("header.php"); ?>
+<?php require_once("conexion.php"); ?>
+<?php 
+    $objconexion = new Conexion();
+    $proyectos = $objconexion->consultar("SELECT * FROM `proyectos`");
+?>
+
+
 
 
 <div class="p-5 bg-light">
@@ -11,4 +18,25 @@
 </div>
 
 
-<?php include("footer.php") ?>
+    
+
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <?php foreach($proyectos as $proyecto) { ?>
+        <div class="col">
+            <div class="card">
+            <img src="img/<?=$proyecto['imagen'];?>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><?=$proyecto['nombre'];?></h5>
+                <p class="card-text"><?=$proyecto['descripcion'];?></p>
+            </div>
+            </div>
+        </div>
+    <?php } ?>
+</div>
+
+
+<br>
+
+<?php include("footer.php"); ?>

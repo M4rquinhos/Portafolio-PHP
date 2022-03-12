@@ -20,4 +20,5 @@
         <a href="album.php">Album</a>
         <a href="cerrar.php">Cerrar</a>
 
+        <br>
    
